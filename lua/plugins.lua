@@ -1,0 +1,121 @@
+return require('packer').startup(function()
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+
+  -- Nova theme for neovim light 
+  use({
+    "zanglg/nova.nvim",
+    config = function()
+        -- support both dark and light style
+        require("nova").setup({ background = "light" })
+
+        -- load colorscheme
+        require("nova").load()
+    end,
+})
+
+  -- nvim-tree for file manage
+  use {
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+    }
+
+  -- vim dashboard
+  -- vim 开始界面
+  use {'glepnir/dashboard-nvim'}
+
+
+  -- bufferline on the top
+  -- 顶部状态栏
+  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+
+  -- treesitter
+  use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    }
+  
+  -- telescope
+  use {
+      'nvim-telescope/telescope.nvim',
+      requires = { {'nvim-lua/plenary.nvim'} }
+}
+
+  -- project
+  -- 项目管理
+  -- Lua
+  use {
+    "ahmedkhalf/project.nvim",
+}
+
+  -- whick-key
+  use {
+      'folke/which-key.nvim'
+  }
+
+  -- comment
+  use {
+    'numToStr/Comment.nvim',
+}
+
+  -- lualine for bottom stausline
+  -- 底部状态栏
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
+
+  -- notify
+  -- 弹窗消息通知
+  use {
+    'rcarriga/nvim-notify'
+  }
+
+  -- autopairs
+  -- 自动补全括号
+  use {
+	"windwp/nvim-autopairs",
+}
+
+  -- coderunner
+  -- 代码运行
+  use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
+
+  -------------------   lsp   --------------------------
+  -- mason for lsp dap linter and others
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+}
+ 
+  -- nlsp-settings
+  -- 方便的lsp配置插件
+  -- use {
+  --   "tamago324/nlsp-settings.nvim"
+  -- }
+
+  -- 补全引擎
+  use("hrsh7th/nvim-cmp")
+  -- Snippet 引擎
+  use("hrsh7th/vim-vsnip")
+  -- 补全源
+  use("hrsh7th/cmp-vsnip")
+  use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
+  use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
+  use("hrsh7th/cmp-path") -- { name = 'path' }
+  use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
+  use("hrsh7th/cmp-nvim-lsp-signature-help") -- { name = 'nvim_lsp_signature_help' }
+  -- 常见编程语言代码段
+  use("rafamadriz/friendly-snippets")
+  -- UI 增强
+  use("onsails/lspkind-nvim")
+
+
+
+  -------------------   dap   -----------------------
+  -- dap for neovim
+  -- dap ui和适配器
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
+end)
