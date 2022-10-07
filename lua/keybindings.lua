@@ -81,7 +81,7 @@ wk.register({
 wk.register({
   ["<Leader>b"] = {
     name = "+Buffer",
-    k = {":Bdelete!<CR>", "Kill buffer"},
+    k = {":bd!<CR>", "Kill buffer"},
     o = {":BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>", "Close other buffer"},
     b = {":bp<CR>", "Last buffer"},
     n = {":ls<CR>", "Buffer numbers"},

@@ -16,7 +16,11 @@ return require("packer").startup(function()
 
 	-- git plugin like magit
 	-- 类似magit的插件neogit
-	use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
+	-- use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
+
+	-- lazygit support
+	-- 使用lazygit接口
+	use("kdheepak/lazygit.nvim")
 
 	-- nvim-tree for file manage
 	use({
