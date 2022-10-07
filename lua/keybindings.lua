@@ -81,14 +81,17 @@ wk.register({
 wk.register({
   ["<Leader>b"] = {
     name = "+Buffer",
-    h = {":BufferLineCyclePrev<CR>", "Left tab"},
-    l = {":BufferLineCycleNext<CR>", "Right tab"},
-    k = {":bd<CR>", "Kill buffer"},
+    k = {":Bdelete!<CR>", "Kill buffer"},
+    o = {":BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>", "Close other buffer"},
     b = {":bp<CR>", "Last buffer"},
     n = {":ls<CR>", "Buffer numbers"},
     t = {":b ", "To buffer"},
   },
 })
+-- change left and right tab
+-- 左右Tab切换
+map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 
 -- Mason
 wk.register({
@@ -122,6 +125,25 @@ pluginKeys.cmp = function(cmp)
     })
   }
 end
+
+-- dap keymaps
+wk.register({
+  ["<Leader>d"] = {
+    name = "+Debug",
+    r = {":lua require('dap').continue()<CR>", "Start debug"},
+    b = {":lua require('dap').toggle_breakpoint()<CR>", "Set breakpoint"},
+    c = {":lua require('dap').clear_breakpoints()<CR>", "Clear breakpoint"},
+    e = {":lua require'dap'.close()<CR>"
+      .. ":lua require'dap'.terminate()<CR>"
+      .. ":lua require'dap.repl'.close()<CR>"
+      .. ":lua require'dapui'.close()<CR>"
+      .. ":lua require('dap').clear_breakpoints()<CR>"
+      .. "<C-w>o<CR>", "Stop debug"},
+  }
+})
+map("i", "<C-d>", ":lua require'dap'.continue()<CR>", opt)
+map("n", "<C-n>", ":lua require'dap'.step_into()<CR>", opt)
+map("n", "<C-o>", ":lua require'dap'.step_over()<CR>", opt)
 
 
 return pluginKeys
