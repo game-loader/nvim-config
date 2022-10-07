@@ -14,6 +14,10 @@ return require("packer").startup(function()
 		end,
 	})
 
+	-- a good terminal
+	-- 一个好的nvim内终端
+	use({ "akinsho/toggleterm.nvim", tag = "*" })
+
 	-- git plugin like magit
 	-- 类似magit的插件neogit
 	-- use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
@@ -21,6 +25,17 @@ return require("packer").startup(function()
 	-- lazygit support
 	-- 使用lazygit接口
 	use("kdheepak/lazygit.nvim")
+
+	-----------------  markdown  --------------------
+	-- markdown preview
+	-- markdown自动预览
+	use({
+		"iamcco/markdown-preview.nvim",
+	})
+
+	-- markdown table
+	-- 优化markdown添加表格
+	use("dhruvasagar/vim-table-mode")
 
 	-- nvim-tree for file manage
 	use({

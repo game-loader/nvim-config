@@ -18,6 +18,20 @@ wk.register({
 -- 代码相关
 map("n", ",", ":RunCode<CR>", opt)
 
+-- markdown related
+-- markdown 相关
+wk.register({
+	["<Leader>m"] = { ":MarkdownPreview<CR>", "Markdown preview" },
+})
+
+-- markdown table
+-- markdown 表格
+wk.register({
+	["<Leader>t"] = {
+		name = "+Table",
+	},
+})
+
 -- git related
 -- git 相关
 wk.register({
