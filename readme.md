@@ -43,6 +43,7 @@
 | \<leader>s     | 保存当前文件                              |
 | \<leader>S     | 保存所有文件                              |
 | \<leader><tab> | 切换回上一个buffer,用于两buffer间来回切换 |
+| ,              | 运行当前文件代码,需要自行配置各种语言     |
 
 ### Packer 
 | key         | function               |
