@@ -2,15 +2,24 @@ return require("packer").startup(function()
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
+	------------------ themes --------------------------
 	-- Nova theme for neovim light
-	use({
-		"zanglg/nova.nvim",
-		config = function()
-			-- support both dark and light style
-			require("nova").setup({ background = "light" })
+	-- use({
+	-- 	"zanglg/nova.nvim",
+	-- 	config = function()
+	-- 		-- support both dark and light style
+	-- 		require("nova").setup({ background = "light" })
 
-			-- load colorscheme
-			require("nova").load()
+	-- 		-- load colorscheme
+	-- 		require("nova").load()
+	-- 	end,
+	-- })
+
+	use({
+		"navarasu/onedark.nvim",
+		config = function()
+			require("onedark").setup({ style = "darker" })
+			require("onedark").load()
 		end,
 	})
 
