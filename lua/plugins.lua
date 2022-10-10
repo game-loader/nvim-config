@@ -137,9 +137,12 @@ return require("packer").startup(function()
 	-- 补全引擎
 	use("hrsh7th/nvim-cmp")
 	-- Snippet 引擎
-	use("hrsh7th/vim-vsnip")
+	use({ "L3MON4D3/LuaSnip" })
+	-- use("hrsh7th/vim-vsnip")
 	-- 补全源
-	use("hrsh7th/cmp-vsnip")
+	-- use("hrsh7th/cmp-vsnip")
+	use({ "ray-x/lsp_signature.nvim" })
+	use({ "saadparwaiz1/cmp_luasnip" })
 	use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
 	use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
 	use("hrsh7th/cmp-path") -- { name = 'path' }

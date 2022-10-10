@@ -28,7 +28,7 @@ wk.register({
 -- markdown 表格
 wk.register({
 	["<Leader>t"] = {
-		name = "+Table",
+		name = "",
 	},
 })
 
@@ -105,6 +105,7 @@ wk.register({
 		b = { ":bp<CR>", "Last buffer" },
 		n = { ":ls<CR>", "Buffer numbers" },
 		t = { ":b ", "To buffer" },
+		c = { ":noh<CR>", "Cancel highlight" },
 	},
 })
 -- change left and right tab
@@ -132,8 +133,16 @@ map("n", "f", ":Telescope find_files<CR>", opt)
 pluginKeys.cmp = function(cmp)
 	return {
 		-- next option
-		-- 下一个
-		["<Tab>"] = cmp.mapping.select_next_item(),
+		["<Tab>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif require("luasnip").expand_or_jumpable() then
+				require("luasnip").expand_or_jump()
+			else
+				fallback()
+			end
+		end, { "i", "s" }), -- 下一个
+
 		["<Up>"] = cmp.mapping.select_prev_item(),
 
 		["<CR>"] = cmp.mapping.confirm({
