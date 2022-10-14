@@ -60,6 +60,9 @@ return require("packer").startup(function()
 	-- 顶部状态栏
 	use({ "akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons" })
 
+	-- 更方便的切换buffer
+	use({ "matbme/JABS.nvim" })
+
 	-- treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -68,15 +71,18 @@ return require("packer").startup(function()
 		end,
 	})
 
+	---------------------  file related -------------------------------
 	-- telescope
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
+	-- telescope-file-browser
+	use({ "nvim-telescope/telescope-file-browser.nvim" })
+
 	-- project
 	-- 项目管理
-	-- Lua
 	use({
 		"ahmedkhalf/project.nvim",
 	})

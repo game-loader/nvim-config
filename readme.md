@@ -35,7 +35,7 @@
 ### 常用
 | key            | function                                  |
 |----------------|-------------------------------------------|
-| n              | 打开nvim-tree文件浏览                     |
+| T              | 打开nvim-tree文件浏览                     |
 | f              | 打开telescope进行文件查找                 |
 | Ctrl-h         | 切换到左标签栏                            |
 | Ctrl-l         | 切换到右标签栏                            |
@@ -73,12 +73,18 @@
 | \<leader>dc | 清理断点  |
 | \<leader>dr | 开始debug |
 | \<Ctrl-n>   | step into |
-| \<Ctrl-o>    | step over |
+| \<Ctrl-o>   | step over |
 
+### buffer
+| key         | function       |
+|-------------|----------------|
+| \<leader>bb | 打开某个buffer |
+| \<leader>bk | 关闭当前buffer |
 
+## 问题
 
-
-
+### 根据文件类型启动某些功能
+可以在ftplugin文件夹中放入对应文件类型的lua文件,如markdown.lua对应markdown文件.写入要执行的命令即可.例子可见ftplugin/markdown中启动markdown table mode
 
 
 

@@ -48,6 +48,7 @@ wk.register({
 		name = "+File",
 		p = { ":Telescope projects<CR>", "Open project" },
 		r = { ":Telescope oldfiles<CR>", "Recent files" },
+		f = { ":Telescope file_browser<CR>", "File browser" },
 		n = { ":enew<CR>", "New file" },
 	},
 })
@@ -84,7 +85,7 @@ map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
 
 -- nvimTree
-map("n", "n", ":NvimTreeToggle<CR>", opt)
+map("n", "T", ":NvimTreeToggle<CR>", opt)
 
 -- Packer
 wk.register({
@@ -102,9 +103,8 @@ wk.register({
 		name = "+Buffer",
 		k = { ":bd!<CR>", "Kill buffer" },
 		o = { ":BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>", "Close other buffer" },
-		b = { ":bp<CR>", "Last buffer" },
+		b = { ":JABSOpen<CR>", "Open buffers" },
 		n = { ":ls<CR>", "Buffer numbers" },
-		t = { ":b ", "To buffer" },
 		c = { ":noh<CR>", "Cancel highlight" },
 	},
 })
