@@ -44,6 +44,7 @@
 | \<leader>S     | 保存所有文件                              |
 | \<leader><tab> | 切换回上一个buffer,用于两buffer间来回切换 |
 | ,              | 运行当前文件代码,需要自行配置各种语言     |
+| Ctrl-\\        | 打开终端                                  |
 
 ### Packer 
 | key         | function               |
@@ -76,15 +77,36 @@
 | \<Ctrl-o>   | step over |
 
 ### buffer
-| key         | function       |
-|-------------|----------------|
-| \<leader>bb | 打开某个buffer |
-| \<leader>bk | 关闭当前buffer |
+| key         | function                       |
+|-------------|--------------------------------|
+| \<leader>bb | 打开某个buffer                 |
+| \<leader>bk | 关闭当前buffer                 |
+| \<leader>bc | 取消高亮(可用于搜索后取消高亮) |
+| \<leader>bo | 关闭其他buffer                 |
+
+### window
+| key               | function           |
+|-------------------|--------------------|
+| \<leader>wo       | 关闭其他窗口       |
+| \<leader>wd       | 关闭当前窗口       |
+| \<leader>wh,j,k,l | 切换其他方向的窗口 |
+| \<leader>ws       | 水平分割窗口       |
+
+
+### file
+| key         | function               |
+|-------------|------------------------|
+| \<leader>ff | telescope 文件浏览     |
+| \<leader>fr | 最近打开的文件         |
+| \<leader>fs | 在项目文件中搜索字符串 |
+| \<leader>fp | 打开项目               |
 
 ## 问题
-
 ### 根据文件类型启动某些功能
-可以在ftplugin文件夹中放入对应文件类型的lua文件,如markdown.lua对应markdown文件.写入要执行的命令即可.例子可见ftplugin/markdown中启动markdown table mode
+可以在ftplugin文件夹中放入对应文件类型的lua文件,如markdown.lua对应markdown文件.写入要执行的命令即可.例子可见ftplugin/markdown中启动markdown table mode()
+
+
+
 
 
 

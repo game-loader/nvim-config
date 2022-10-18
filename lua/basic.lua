@@ -28,7 +28,7 @@ M.load_default_options = function()
 		timeoutlen = 1000, -- time to wait for a mapped sequence to complete (in milliseconds)
 		title = true, -- set the title of window to the value of the titlestring
 		-- opt.titlestring = "%<%F%=%l/%L - nvim" -- what the title of the window will be set to
-		undodir = undodir, -- set an undo directory
+		-- undodir = undodir, -- set an undo directory
 		undofile = true, -- enable persistent undo
 		updatetime = 100, -- faster completion
 		writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
@@ -58,6 +58,7 @@ M.load_default_options = function()
 		loaded_netrwPlugin = 1,
 		-- set leaderkey to space
 		mapleader = " ",
+		copilot_node_command = "~/.nodenv/versions/16.17.0/bin/node",
 	}
 
 	for k, v in pairs(let_options) do

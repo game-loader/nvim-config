@@ -27,9 +27,14 @@ return require("packer").startup(function()
 	-- 一个好的nvim内终端
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
 
-	-- git plugin like magit
-	-- 类似magit的插件neogit
-	-- use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
+	-- chrome intergration
+	-- 浏览器集成
+	-- use({
+	-- 	"glacambre/firenvim",
+	-- 	run = function()
+	-- 		vim.fn["firenvim#install"](0)
+	-- 	end,
+	-- })
 
 	-- lazygit support
 	-- 使用lazygit接口
@@ -46,6 +51,14 @@ return require("packer").startup(function()
 	-- 优化markdown添加表格
 	use("dhruvasagar/vim-table-mode")
 
+	-- nvim-markdown
+	-- markdown 增强
+	use("ixru/nvim-markdown")
+
+	-- orgmode support
+	-- orgmode 支持
+	use({ "nvim-orgmode/orgmode" })
+
 	-- nvim-tree for file manage
 	use({
 		"kyazdani42/nvim-tree.lua",
@@ -56,12 +69,16 @@ return require("packer").startup(function()
 	-- vim 开始界面
 	use({ "glepnir/dashboard-nvim" })
 
+	-- smooth neovim scroll
+	-- 顺滑的neovim滚动
+	use("karb94/neoscroll.nvim")
+
 	-- bufferline on the top
 	-- 顶部状态栏
 	use({ "akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons" })
 
 	-- 更方便的切换buffer
-	use({ "matbme/JABS.nvim" })
+	-- use({ "matbme/JABS.nvim" })
 
 	-- treesitter
 	use({
@@ -92,11 +109,24 @@ return require("packer").startup(function()
 		"folke/which-key.nvim",
 	})
 
+	--------------------- buffer related -----------------
+	-- search and replace
+	use("windwp/nvim-spectre")
+
+	-- indent-blankline
+	-- 竖向加竖线显示对齐
+	use({ "lukas-reineke/indent-blankline.nvim" })
 	-- comment
 	use({
 		"numToStr/Comment.nvim",
 	})
 
+	-- hop plugin
+	-- 快速跳转
+	use({
+		"phaazon/hop.nvim",
+		branch = "v2", -- optional but strongly recommended
+	})
 	-- lualine for bottom stausline
 	-- 底部状态栏
 	use({
@@ -119,6 +149,10 @@ return require("packer").startup(function()
 	-- coderunner
 	-- 代码运行
 	use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
+
+	-- cmake support
+	-- cmake 支持
+	use("Civitasv/cmake-tools.nvim")
 
 	-------------------   lsp   --------------------------
 	-- mason for lsp dap linter and others
@@ -158,6 +192,8 @@ return require("packer").startup(function()
 	use("rafamadriz/friendly-snippets")
 	-- UI 增强
 	use("onsails/lspkind-nvim")
+	-- copilot 增强
+	use("github/copilot.vim")
 
 	-------------------   dap   -----------------------
 	-- dap for neovim

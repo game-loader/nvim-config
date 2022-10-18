@@ -1,4 +1,0 @@
-require("bufferline").setup {
-    options = {
-    }
-}

@@ -50,6 +50,7 @@ wk.register({
 		r = { ":Telescope oldfiles<CR>", "Recent files" },
 		f = { ":Telescope file_browser<CR>", "File browser" },
 		n = { ":enew<CR>", "New file" },
+		s = { ":Telescope live_grep<CR>", "Search in project" },
 	},
 })
 
@@ -103,9 +104,10 @@ wk.register({
 		name = "+Buffer",
 		k = { ":bd!<CR>", "Kill buffer" },
 		o = { ":BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>", "Close other buffer" },
-		b = { ":JABSOpen<CR>", "Open buffers" },
+		b = { ":Telescope buffers<CR>", "Open buffers" },
 		n = { ":ls<CR>", "Buffer numbers" },
 		c = { ":noh<CR>", "Cancel highlight" },
+		s = { ":lua require('spectre').open_file_search()<CR>", "Searching in buffer" },
 	},
 })
 -- change left and right tab

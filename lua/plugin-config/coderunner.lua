@@ -3,5 +3,6 @@ require("code_runner").setup({
 	filetype = {
 		c = "cd $dir && gcc $fileName -o $fileNameWithoutExt -g && $dir/$fileNameWithoutExt",
 		cpp = "cd $dir && g++ $fileName -o $fileNameWithoutExt -g && $dir/$fileNameWithoutExt",
+		go = "cd $dir && go run $fileName",
 	},
 })
