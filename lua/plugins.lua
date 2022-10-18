@@ -199,4 +199,8 @@ return require("packer").startup(function()
 	-- dap for neovim
 	-- dap ui和适配器
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "theHamsta/nvim-dap-virtual-text" } })
+
+	-- persistent breakpoints
+	-- 持久化断点
+	use({ "Weissle/persistent-breakpoints.nvim" })
 end)

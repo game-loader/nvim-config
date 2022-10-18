@@ -166,7 +166,6 @@ wk.register({
 				.. ":lua require'dap'.terminate()<CR>"
 				.. ":lua require'dap.repl'.close()<CR>"
 				.. ":lua require'dapui'.close()<CR>"
-				.. ":lua require('dap').clear_breakpoints()<CR>"
 				.. "<C-w>o<CR>",
 			"Stop debug",
 		},
