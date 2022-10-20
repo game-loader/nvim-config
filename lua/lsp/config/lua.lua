@@ -35,6 +35,20 @@ local opts = {
 		client.server_capabilities.document_formatting = false
 		client.server_capabilities.document_range_formatting = false
 
+		vim.api.nvim_create_autocmd("CursorHold", {
+			buffer = bufnr,
+			callback = function()
+				local opts = {
+					focusable = false,
+					close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+					border = "rounded",
+					source = "always",
+					prefix = " ",
+					scope = "cursor",
+				}
+				vim.diagnostic.open_float(nil, opts)
+			end,
+		})
 		-- local function buf_set_keymap(...)
 		--   vim.api.nvim_buf_set_keymap(bufnr, ...)
 	end,

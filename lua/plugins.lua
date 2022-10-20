@@ -98,6 +98,10 @@ return require("packer").startup(function()
 	-- telescope-file-browser
 	use({ "nvim-telescope/telescope-file-browser.nvim" })
 
+	-- create new file
+	-- 快捷创建新文件
+	use("Mohammed-Taher/AdvancedNewFile.nvim")
+
 	-- project
 	-- 项目管理
 	use({

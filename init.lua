@@ -31,5 +31,6 @@ require("plugin-config/lazygit")
 require("lsp")
 require("lsp.cmp")
 require("lsp.null-ls")
+require("lsp.ui")
 
 require("nvim-dap")

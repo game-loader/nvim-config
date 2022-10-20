@@ -49,7 +49,7 @@ wk.register({
 		p = { ":Telescope projects<CR>", "Open project" },
 		r = { ":Telescope oldfiles<CR>", "Recent files" },
 		f = { ":Telescope file_browser<CR>", "File browser" },
-		n = { ":enew<CR>", "New file" },
+		n = { ":AdvancedNewFile<CR>", "New file" },
 		s = { ":Telescope live_grep<CR>", "Search in project" },
 	},
 })
