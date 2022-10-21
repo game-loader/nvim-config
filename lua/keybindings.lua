@@ -121,6 +121,7 @@ wk.register({
 		name = "+Lsp",
 		i = { ":LspInstall<CR>", "Install lsp" },
 		I = { ":MasonInstall ", "Install any" },
+		r = { ":LspRestart<CR>", "Lsp restart" },
 		l = { ":Mason<CR>", "Mason info" },
 		u = { ":MasonUninstall<CR>", "Uninstall lsp" },
 		U = { ":MasonUninstallAll<CR>", "Unistall all" },

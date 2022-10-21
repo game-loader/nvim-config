@@ -10,8 +10,8 @@ M.load_default_options = function()
 		fileencoding = "utf-8", -- the encoding written to a file
 		foldmethod = "manual", -- folding, set to "expr" for treesitter based folding
 		foldexpr = "", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
-		guifont = "Menlo:h17", -- the font used in graphical neovim applications
-		background = "dark", -- set the background to light or dark
+		guifont = "Menlo:h20", -- the font used in graphical neovim applications
+		background = "light", -- set the background to light or dark
 		hidden = true, -- required to keep multiple buffers and open multiple buffers
 		hlsearch = true, -- highlight all matches on previous search pattern
 		ignorecase = true, -- ignore case in search patterns
@@ -64,6 +64,8 @@ M.load_default_options = function()
 	for k, v in pairs(let_options) do
 		vim.g[k] = v
 	end
+
+	vim.cmd("colorscheme melange")
 end
 
 return M

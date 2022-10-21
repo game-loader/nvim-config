@@ -17,11 +17,9 @@ return require("packer").startup(function()
 
 	use({
 		"navarasu/onedark.nvim",
-		config = function()
-			require("onedark").setup({ style = "darker" })
-			require("onedark").load()
-		end,
 	})
+
+	use("savq/melange")
 
 	-- a good terminal
 	-- 一个好的nvim内终端
@@ -172,11 +170,8 @@ return require("packer").startup(function()
 		"jose-elias-alvarez/null-ls.nvim",
 	})
 
-	-- nlsp-settings
-	-- 方便的lsp配置插件
-	-- use {
-	--   "tamago324/nlsp-settings.nvim"
-	-- }
+	-- lsp-status
+	use("nvim-lua/lsp-status.nvim")
 
 	-- 补全引擎
 	use("hrsh7th/nvim-cmp")
