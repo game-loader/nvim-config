@@ -14,6 +14,7 @@ return require("packer").startup(function()
 	-- 		require("nova").load()
 	-- 	end,
 	-- })
+	use("rmehri01/onenord.nvim")
 
 	use({
 		"navarasu/onedark.nvim",
@@ -21,18 +22,15 @@ return require("packer").startup(function()
 
 	use("savq/melange")
 
+	-----------------------------------------------------------------------------------------
+
 	-- a good terminal
 	-- 一个好的nvim内终端
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
 
-	-- chrome intergration
-	-- 浏览器集成
-	-- use({
-	-- 	"glacambre/firenvim",
-	-- 	run = function()
-	-- 		vim.fn["firenvim#install"](0)
-	-- 	end,
-	-- })
+	-- make live command
+	-- 实时命令
+	use({ "smjonas/live-command.nvim" })
 
 	-- lazygit support
 	-- 使用lazygit接口
@@ -112,8 +110,6 @@ return require("packer").startup(function()
 	})
 
 	--------------------- buffer related -----------------
-	-- search and replace
-	use("windwp/nvim-spectre")
 
 	-- indent-blankline
 	-- 竖向加竖线显示对齐

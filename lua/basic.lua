@@ -65,7 +65,7 @@ M.load_default_options = function()
 		vim.g[k] = v
 	end
 
-	vim.cmd("colorscheme melange")
+	vim.cmd("colorscheme onenord")
 end
 
 return M
