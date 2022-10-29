@@ -24,6 +24,7 @@ M.load_default_options = function()
 		splitbelow = true, -- force all horizontal splits to go below current window
 		splitright = true, -- force all vertical splits to go to the right of current window
 		swapfile = false, -- creates a swapfile
+		autochdir = true, -- auto change working directory
 		termguicolors = true, -- set term gui colors (most terminals support this)
 		timeoutlen = 1000, -- time to wait for a mapped sequence to complete (in milliseconds)
 		title = true, -- set the title of window to the value of the titlestring

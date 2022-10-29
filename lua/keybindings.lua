@@ -107,7 +107,7 @@ wk.register({
 		b = { ":Telescope buffers<CR>", "Open buffers" },
 		n = { ":ls<CR>", "Buffer numbers" },
 		c = { ":noh<CR>", "Cancel highlight" },
-		s = { ":lua require('spectre').open_file_search()<CR>", "Searching in buffer" },
+		s = { ":Telescope current_buffer_fuzzy_find<CR>", "Searching in buffer" },
 	},
 })
 -- change left and right tab
@@ -167,6 +167,7 @@ wk.register({
 				.. ":lua require'dap'.terminate()<CR>"
 				.. ":lua require'dap.repl'.close()<CR>"
 				.. ":lua require'dapui'.close()<CR>"
+				.. ":DapVirtualTextDisable<CR>"
 				.. "<C-w>o<CR>",
 			"Stop debug",
 		},
