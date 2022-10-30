@@ -14,6 +14,19 @@ wk.register({
 	["<Leader>S"] = { ":wa<CR>", "Save All" },
 })
 
+-- lsp 回调快捷键设置
+pluginKeys.maplsp = function(mapbuf)
+	-- go xx
+	mapbuf("n", "]d", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+	-- mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
+	mapbuf("n", "]D", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
+	mapbuf("n", "]i", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
+	mapbuf("n", "]r", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
+	-- diagnostic
+	mapbuf("n", "]p", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
+	mapbuf("n", "]n", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
+end
+
 -- code related
 -- 代码相关
 map("n", ",", ":RunCode<CR>", opt)

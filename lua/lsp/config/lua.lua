@@ -49,13 +49,13 @@ local opts = {
 				vim.diagnostic.open_float(nil, opts)
 			end,
 		})
-		-- local function buf_set_keymap(...)
-		--   vim.api.nvim_buf_set_keymap(bufnr, ...)
+		local function buf_set_keymap(...)
+			vim.api.nvim_buf_set_keymap(bufnr, ...)
+		end
+		require("keybindings").maplsp(buf_set_keymap)
 	end,
 	-- -- local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 	-- -- 绑定快捷键
-	-- require("keybindings").mapLSP(buf_set_keymap)
-	-- end,
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
