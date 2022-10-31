@@ -32,6 +32,7 @@
 
 ## 快捷键
  \<leader>键被配置为空格
+ \<localleader>被配置为\\
 ### 常用
 | key            | function                                  |
 |----------------|-------------------------------------------|
@@ -45,6 +46,12 @@
 | \<leader><tab> | 切换回上一个buffer,用于两buffer间来回切换 |
 | ,              | 运行当前文件代码,需要自行配置各种语言     |
 | Ctrl-\\        | 打开终端                                  |
+
+### Insert模式下特殊按键
+| key    | function   |
+|--------|------------|
+| Ctrl-a | 跳转到行首 |
+| Ctrl-e | 跳转到行尾 |
 
 ### Packer 
 | key         | function               |
@@ -60,6 +67,10 @@
 | \<leader>lI | 打开Mason安装lsp dap 等任意服务 |
 | \<leader>ll | 打开Mason查看安装的服务         |
 | \<leader>lu | 卸载当前语言对应的lsp           |
+| \<leader>lr | 重启lsp                         |
+| ]d          | 跳转到函数定义                  |
+| ]i          | 跳转到函数实现                  |
+| ]r          | 跳转到函数引用                  |
 
 ### git
 | key        | function        |
@@ -83,6 +94,7 @@
 | \<leader>bk | 关闭当前buffer                 |
 | \<leader>bc | 取消高亮(可用于搜索后取消高亮) |
 | \<leader>bo | 关闭其他buffer                 |
+| \<leader>bs | 搜索当前buffer                 |
 
 ### window
 | key               | function           |
@@ -100,6 +112,16 @@
 | \<leader>fr | 最近打开的文件         |
 | \<leader>fs | 在项目文件中搜索字符串 |
 | \<leader>fp | 打开项目               |
+| \<leader>fn | 新建文件               |
+
+### markdown
+| key             | function           |
+|-----------------|--------------------|
+| \<leader>m      | 预览markdown       |
+| \<localleader>t | 在当前位置插入目录 |
+| \<localleader>d | 降低所有目录等级   |
+| \<localleader>i | 升高所有目录等级   |
+
 
 ## 问题
 ### 根据文件类型启动某些功能

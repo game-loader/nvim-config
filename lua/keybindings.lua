@@ -123,10 +123,17 @@ wk.register({
 		s = { ":Telescope current_buffer_fuzzy_find<CR>", "Searching in buffer" },
 	},
 })
+
+-- insert 模式下ctrl a e跳转开头结尾
+map("i", "<C-a>", "<C-o>I", opt)
+map("i", "<C-e>", "<C-o>A", opt)
+
 -- change left and right tab
 -- 左右Tab切换
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+map("i", "<C-h>", "<C-o>:BufferLineCyclePrev<CR>", opt)
+map("i", "<C-l>", "<C-o>:BufferLineCycleNext<CR>", opt)
 
 -- Mason
 wk.register({
@@ -190,4 +197,23 @@ map("i", "<C-d>", ":lua require'dap'.continue()<CR>", opt)
 map("n", "<C-n>", ":lua require'dap'.step_into()<CR>", opt)
 map("n", "<C-o>", ":lua require'dap'.step_over()<CR>", opt)
 
+-- set keymap based on file type
+vim.cmd("autocmd FileType * lua SetKeybinds()")
+function SetKeybinds()
+	local fileTy = vim.api.nvim_buf_get_option(0, "filetype")
+	local opts = { prefix = "<localleader>", buffer = 0 }
+
+	if fileTy == "markdown" then
+		wk.register({
+			["t"] = { ":InsertNToc<CR>", "Insert table of content" },
+			["d"] = { ":HeaderDecrease<CR>", "All header decrease" },
+			["i"] = { ":HeaderIncrease<CR>", "All header increase" },
+		}, opts)
+		-- elseif fileTy == "sh" then
+		-- 	wk.register({
+		-- 		["W"] = { ":w<CR>", "test write" },
+		-- 		["Q"] = { ":q<CR>", "test quit" },
+		-- 	}, opts)
+	end
+end
 return pluginKeys

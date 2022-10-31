@@ -59,6 +59,7 @@ M.load_default_options = function()
 		loaded_netrwPlugin = 1,
 		-- set leaderkey to space
 		mapleader = " ",
+		maplocalleader = "\\",
 		copilot_node_command = "~/.nodenv/versions/16.17.0/bin/node",
 	}
 
