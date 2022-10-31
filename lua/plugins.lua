@@ -2,6 +2,8 @@ return require("packer").startup(function()
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
+	-- lua 调试
+	use("rafcamlet/nvim-luapad")
 	------------------ themes --------------------------
 	-- Nova theme for neovim light
 	-- use({
@@ -165,9 +167,6 @@ return require("packer").startup(function()
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 	})
-
-	-- lsp-status
-	use("nvim-lua/lsp-status.nvim")
 
 	-- 补全引擎
 	use("hrsh7th/nvim-cmp")
