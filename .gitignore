@@ -1,1 +1,4 @@
 plugin
+
+.DS_Store
+snippets/go.json

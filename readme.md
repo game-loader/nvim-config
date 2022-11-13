@@ -44,6 +44,7 @@
 | \<leader>s     | 保存当前文件                              |
 | \<leader>S     | 保存所有文件                              |
 | \<leader><tab> | 切换回上一个buffer,用于两buffer间来回切换 |
+| \<leader>j     | 快速进行行跳转                                          |
 | ,              | 运行当前文件代码,需要自行配置各种语言     |
 | Ctrl-\\        | 打开终端                                  |
 
@@ -126,6 +127,8 @@
 ## 问题
 ### 根据文件类型启动某些功能
 可以在ftplugin文件夹中放入对应文件类型的lua文件,如markdown.lua对应markdown文件.写入要执行的命令即可.例子可见ftplugin/markdown中启动markdown table mode()
+
+
 
 
 

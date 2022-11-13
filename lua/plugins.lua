@@ -47,11 +47,15 @@ return require("packer").startup(function()
 
 	-- markdown table
 	-- 优化markdown添加表格
-	use("dhruvasagar/vim-table-mode")
+	-- use("dhruvasagar/vim-table-mode")
 
 	-- nvim-markdown
 	-- markdown 增强
-	use("ixru/nvim-markdown")
+	-- use("ixru/nvim-markdown")
+
+	-- markdown flow and enhance
+	-- markdown 流程和增强
+	use({ "jakewvincent/mkdnflow.nvim" })
 
 	-- orgmode support
 	-- orgmode 支持
@@ -127,6 +131,7 @@ return require("packer").startup(function()
 		"phaazon/hop.nvim",
 		branch = "v2", -- optional but strongly recommended
 	})
+
 	-- lualine for bottom stausline
 	-- 底部状态栏
 	use({

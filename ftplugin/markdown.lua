@@ -1,1 +1,1 @@
-vim.cmd("TableModeEnable")
+-- vim.cmd("TableModeEnable")

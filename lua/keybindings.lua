@@ -9,7 +9,7 @@ local wk = require("which-key")
 -- basic operation for write and quit
 -- 文件写入退出基本操作
 wk.register({
-	["<Leader>s"] = { ":w<CR>", "Save File" },
+	["<Leader>s"] = { ":w!<CR>", "Save File" },
 	["<Leader>q"] = { ":qa<CR>", "Quit All" },
 	["<Leader>S"] = { ":wa<CR>", "Save All" },
 })
@@ -25,6 +25,8 @@ pluginKeys.maplsp = function(mapbuf)
 	-- diagnostic
 	mapbuf("n", "]p", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
 	mapbuf("n", "]n", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
+	mapbuf("n", "]a", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
+	mapbuf("n", "]h", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
 end
 
 -- code related
@@ -35,14 +37,6 @@ map("n", ",", ":RunCode<CR>", opt)
 -- markdown 相关
 wk.register({
 	["<Leader>m"] = { ":MarkdownPreview<CR>", "Markdown preview" },
-})
-
--- markdown table
--- markdown 表格
-wk.register({
-	["<Leader>t"] = {
-		name = "",
-	},
 })
 
 -- git related
@@ -61,9 +55,10 @@ wk.register({
 		name = "+File",
 		p = { ":Telescope projects<CR>", "Open project" },
 		r = { ":Telescope oldfiles<CR>", "Recent files" },
-		f = { ":Telescope file_browser<CR>", "File browser" },
+		b = { ":Telescope file_browser<CR>", "File browser" },
 		n = { ":AdvancedNewFile<CR>", "New file" },
 		s = { ":Telescope live_grep<CR>", "Search in project" },
+		f = { ":Telescope find_files<CR>", "Search file" },
 	},
 })
 
@@ -123,7 +118,11 @@ wk.register({
 		s = { ":Telescope current_buffer_fuzzy_find<CR>", "Searching in buffer" },
 	},
 })
+wk.register({
+	["<Leader>j"] = { ":HopLineStart<CR>", "Quick jump line" },
+})
 
+map("n", "<Tab>", "za", opt)
 -- insert 模式下ctrl a e跳转开头结尾
 map("i", "<C-a>", "<C-o>I", opt)
 map("i", "<C-e>", "<C-o>A", opt)
@@ -142,14 +141,13 @@ wk.register({
 		i = { ":LspInstall<CR>", "Install lsp" },
 		I = { ":MasonInstall ", "Install any" },
 		r = { ":LspRestart<CR>", "Lsp restart" },
-		l = { ":Mason<CR>", "Mason info" },
+		m = { ":Mason<CR>", "Mason info" },
 		u = { ":MasonUninstall<CR>", "Uninstall lsp" },
 		U = { ":MasonUninstallAll<CR>", "Unistall all" },
+		l = { ":LspInfo<CR>", "Lsp infos" },
+		R = { vim.lsp.buf.rename, "Buffer var rename" },
 	},
 })
-
--- Telescope
-map("n", "f", ":Telescope find_files<CR>", opt)
 
 -- cmpeletion keys
 -- 补全快捷键

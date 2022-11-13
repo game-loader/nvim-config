@@ -11,6 +11,7 @@ local servers = {
 	eslint = require("lsp.config.eslint"),
 	-- bashls = require("lsp.config.bash"),
 	pyright = require("lsp.config.pyright"),
+	-- jedi_language_server = require("lsp.config.jedi"),
 	vuels = require("lsp.config.vue"),
 	-- html = require("lsp.config.html"),
 	-- cssls = require("lsp.config.css"),
