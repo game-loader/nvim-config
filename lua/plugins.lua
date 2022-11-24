@@ -153,8 +153,7 @@ return require("packer").startup(function()
 
 	-- coderunner
 	-- 代码运行
-	use({ "CRAG666/code_runner.nvim", requires = "nvim-lua/plenary.nvim" })
-
+	use({ "is0n/jaq-nvim" })
 	-- cmake support
 	-- cmake 支持
 	use("Civitasv/cmake-tools.nvim")
@@ -193,6 +192,9 @@ return require("packer").startup(function()
 	use("onsails/lspkind-nvim")
 	-- copilot 增强
 	use("github/copilot.vim")
+
+	------------------- repl  ----------------------
+	use({ "hkupty/iron.nvim" })
 
 	-------------------   dap   -----------------------
 	-- dap for neovim

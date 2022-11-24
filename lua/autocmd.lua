@@ -18,8 +18,8 @@ end
 local autoCommands = {
 	-- other autocommands
 	open_folds = {
-		{ "BufEnter", "*", "normal zx" },
-		{ "BufEnter", "*", "normal zR" },
+		{ "BufAdd", "*", "normal zx" },
+		{ "BufEnter,BufModifiedSet", "*", "normal zR" },
 	},
 }
 

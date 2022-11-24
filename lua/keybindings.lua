@@ -31,7 +31,7 @@ end
 
 -- code related
 -- 代码相关
-map("n", ",", ":RunCode<CR>", opt)
+map("n", ",", ":Jaq<CR>", opt)
 
 -- markdown related
 -- markdown 相关
@@ -115,6 +115,8 @@ wk.register({
 		b = { ":Telescope buffers<CR>", "Open buffers" },
 		n = { ":ls<CR>", "Buffer numbers" },
 		c = { ":noh<CR>", "Cancel highlight" },
+		C = { ":call setqflist([], 'r')<CR>", "Clear quickfix" },
+		q = { ":copen<CR>", "Open quickfix" },
 		s = { ":Telescope current_buffer_fuzzy_find<CR>", "Searching in buffer" },
 	},
 })
@@ -206,6 +208,11 @@ function SetKeybinds()
 			["t"] = { ":InsertNToc<CR>", "Insert table of content" },
 			["d"] = { ":HeaderDecrease<CR>", "All header decrease" },
 			["i"] = { ":HeaderIncrease<CR>", "All header increase" },
+		}, opts)
+	elseif fileTy == "python" then
+		wk.register({
+			["r"] = { ":MagmaEvaluateOperator<CR>", "Jupyter evaluate" },
+			["c"] = { ":MagmaEvaluateCell<CR>", "Jupyter evaluate cell" },
 		}, opts)
 		-- elseif fileTy == "sh" then
 		-- 	wk.register({

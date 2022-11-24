@@ -16,6 +16,8 @@ require("null-ls").setup({
 		require("null-ls").builtins.formatting.clang_format,
 		require("null-ls").builtins.formatting.gofmt,
 		require("null-ls").builtins.formatting.black,
+		require("null-ls").builtins.formatting.eslint_d,
+		require("null-ls").builtins.formatting.jq,
 	},
 	-- you can reuse a shared lspconfig on_attach callback here
 	on_attach = function(client, bufnr)

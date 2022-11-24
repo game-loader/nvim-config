@@ -1,13 +1,14 @@
 return {
 	on_setup = function(server)
 		server.setup({
-			filetypes = {
-				"typescript",
-				"javascript",
-				"javascriptreact",
-				"typescriptreact",
-				"vue",
-				"json",
+			settings = {
+				pylsp = {
+					plugins = {
+						pycodestyle = {
+							ignore = { "E501" },
+						},
+					},
+				},
 			},
 			flags = {
 				debounce_text_changes = 150,
