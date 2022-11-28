@@ -18,8 +18,7 @@ end
 local autoCommands = {
 	-- other autocommands
 	open_folds = {
-		{ "BufAdd", "*", "normal zx" },
-		{ "BufEnter,BufModifiedSet", "*", "normal zR" },
+		{ "FileReadPost", "*.md", "normal zx" },
 	},
 }
 

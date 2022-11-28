@@ -29,6 +29,8 @@ M.load_default_options = function()
 		-- foldexpr = "", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
 		foldmethod = "expr",
 		foldexpr = "nvim_treesitter#foldexpr()",
+		foldenable = true,
+		foldlevel = 99,
 		title = true, -- set the title of window to the value of the titlestring
 		-- opt.titlestring = "%<%F%=%l/%L - nvim" -- what the title of the window will be set to
 		-- undodir = undodir, -- set an undo directory
