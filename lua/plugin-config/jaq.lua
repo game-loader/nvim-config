@@ -12,8 +12,8 @@ require("jaq-nvim").setup({
 			python = "python3 %",
 			go = "go run %",
 			sh = "sh %",
-			c = "cd $dir && gcc $file -o $fileBase -g && $fileBase",
-			cpp = "cd $dir && g++ $file -o $fileBase -g -w -std=c++11 && $fileBase",
+			c = "cd $dir && gcc $file -o $fileBase -g && cd $dir && $fileBase",
+			cpp = "cd $dir && g++ $file -o $fileBase -g -w -std=c++11 && cd $dir && $fileBase",
 		},
 	},
 

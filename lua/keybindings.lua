@@ -93,8 +93,8 @@ wk.register({
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
 
--- nvimTree
-map("n", "T", ":NvimTreeToggle<CR>", opt)
+-- neoTree
+map("n", "T", ":NeoTreeFocusToggle<CR>", opt)
 
 -- Packer
 wk.register({

@@ -4,7 +4,7 @@ require("plugins")
 
 require("keybindings")
 
-require("plugin-config/nvim-tree")
+-- require("plugin-config/nvim-tree")
 require("plugin-config/buffer_line")
 require("plugin-config/treesitter")
 require("plugin-config/telescope")
