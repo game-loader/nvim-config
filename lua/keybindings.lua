@@ -82,12 +82,6 @@ wk.register({
 	},
 })
 
---一般映射方式
---map("n", "<Leader>wh", "<C-w>h", opt)
---map("n", "<Leader>wj", "<C-w>j", opt)
---map("n", "<Leader>wk", "<C-w>k", opt)
---map("n", "<Leader>wl", "<C-w>l", opt)
-
 -- base operation for visual mode
 -- 可视模式下基本操作
 map("v", "<", "<gv", opt)
@@ -124,6 +118,10 @@ wk.register({
 	["<Leader>j"] = { ":HopLineStart<CR>", "Quick jump line" },
 })
 
+-- 快速切换主题
+wk.register({
+	["<Leader>c"] = { ":Telescope colorscheme<CR>", "Quick change colortheme" },
+})
 map("n", "<Tab>", "za", opt)
 -- insert 模式下ctrl a e跳转开头结尾
 map("i", "<C-a>", "<C-o>I", opt)

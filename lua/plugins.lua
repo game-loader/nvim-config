@@ -5,24 +5,12 @@ return require("packer").startup(function()
 	-- lua 调试
 	use("rafcamlet/nvim-luapad")
 	------------------ themes --------------------------
-	-- Nova theme for neovim light
-	-- use({
-	-- 	"zanglg/nova.nvim",
-	-- 	config = function()
-	-- 		-- support both dark and light style
-	-- 		require("nova").setup({ background = "light" })
-
-	-- 		-- load colorscheme
-	-- 		require("nova").load()
-	-- 	end,
-	-- })
-	use("rmehri01/onenord.nvim")
 
 	use({
 		"navarasu/onedark.nvim",
 	})
 
-	use("savq/melange")
+	use("folke/tokyonight.nvim")
 
 	-----------------------------------------------------------------------------------------
 
@@ -44,14 +32,6 @@ return require("packer").startup(function()
 	use({
 		"iamcco/markdown-preview.nvim",
 	})
-
-	-- markdown table
-	-- 优化markdown添加表格
-	-- use("dhruvasagar/vim-table-mode")
-
-	-- nvim-markdown
-	-- markdown 增强
-	-- use("ixru/nvim-markdown")
 
 	-- markdown flow and enhance
 	-- markdown 流程和增强
@@ -79,15 +59,24 @@ return require("packer").startup(function()
 
 	-- vim dashboard
 	-- vim 开始界面
-	use({ "glepnir/dashboard-nvim" })
+	-- use({
+	-- 	"glepnir/dashboard-nvim",
+	-- 	event = "VimEnter",
+	-- 	-- config = function()
+	-- 	-- 	require("dashboard").setup({
+	-- 	-- 		-- config
+	-- 	-- 	})
+	-- 	-- end,
+	-- 	requires = { "nvim-tree/nvim-web-devicons" },
+	-- })
 
 	-- smooth neovim scroll
 	-- 顺滑的neovim滚动
-	use("karb94/neoscroll.nvim")
+	-- use("karb94/neoscroll.nvim")
 
 	-- bufferline on the top
 	-- 顶部状态栏
-	use({ "akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons" })
+	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
 
 	-- 更方便的切换buffer
 	-- use({ "matbme/JABS.nvim" })
@@ -146,7 +135,7 @@ return require("packer").startup(function()
 	-- 底部状态栏
 	use({
 		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		requires = { "nvim-tree/nvim-web-devicons", opt = true },
 	})
 
 	-- notify
@@ -164,6 +153,7 @@ return require("packer").startup(function()
 	-- coderunner
 	-- 代码运行
 	use({ "is0n/jaq-nvim" })
+
 	-- cmake support
 	-- cmake 支持
 	use("Civitasv/cmake-tools.nvim")
@@ -176,19 +166,21 @@ return require("packer").startup(function()
 		"neovim/nvim-lspconfig",
 	})
 
+	-- coc-nvim complete
+	-- use({ "neoclide/coc.nvim", branch = "release" })
 	-- null-ls for formatter and others
 	-- null-ls 用于格式化和其他
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 	})
 
-	-- 补全引擎
+	-- -- 补全引擎
 	use("hrsh7th/nvim-cmp")
 	-- Snippet 引擎
 	use({ "L3MON4D3/LuaSnip" })
-	-- use("hrsh7th/vim-vsnip")
+	use("hrsh7th/vim-vsnip")
 	-- 补全源
-	-- use("hrsh7th/cmp-vsnip")
+	use("hrsh7th/cmp-vsnip")
 	use({ "ray-x/lsp_signature.nvim" })
 	use({ "saadparwaiz1/cmp_luasnip" })
 	use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }

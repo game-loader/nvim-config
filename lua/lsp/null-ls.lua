@@ -13,7 +13,11 @@ end
 require("null-ls").setup({
 	sources = {
 		require("null-ls").builtins.formatting.stylua,
-		require("null-ls").builtins.formatting.clang_format,
+		require("null-ls").builtins.formatting.styler,
+		require("null-ls").builtins.formatting.clang_format.with({
+			disabled_filetypes = { "cs" },
+		}),
+		require("null-ls").builtins.formatting.csharpier,
 		require("null-ls").builtins.formatting.gofmt,
 		require("null-ls").builtins.formatting.black,
 		require("null-ls").builtins.formatting.eslint_d,

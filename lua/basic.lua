@@ -8,6 +8,7 @@ M.load_default_options = function()
 		completeopt = { "menuone", "noselect" },
 		conceallevel = 0, -- so that `` is visible in markdown files
 		fileencoding = "utf-8", -- the encoding written to a file
+		fileencodings = "utf-8,cp936,gb18030,big5",
 		guifont = "FiraCode Nerd Font:h20", -- the font used in graphical neovim applications
 		background = "light", -- set the background to light or dark
 		hidden = true, -- required to keep multiple buffers and open multiple buffers
@@ -71,8 +72,6 @@ M.load_default_options = function()
 	for k, v in pairs(let_options) do
 		vim.g[k] = v
 	end
-
-	vim.cmd("colorscheme onenord")
 end
 
 return M

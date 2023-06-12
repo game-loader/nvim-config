@@ -15,10 +15,24 @@ function M.nvim_create_augroups(definitions)
 	end
 end
 
+function set_colorscheme()
+	local colorschemes = vim.fn.getcompletion("", "color")
+	local desired_colorscheme = "tokyonight-day"
+
+	if vim.tbl_contains(colorschemes, desired_colorscheme) then
+		vim.cmd("colorscheme " .. desired_colorscheme)
+	else
+		vim.cmd("colorscheme default")
+	end
+end
+
 local autoCommands = {
 	-- other autocommands
 	open_folds = {
 		{ "FileReadPost", "*.md", "normal zx" },
+	},
+	set_colorscheme = {
+		{ "VimEnter", "*", "lua set_colorscheme()" },
 	},
 }
 
