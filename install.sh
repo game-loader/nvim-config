@@ -21,11 +21,13 @@ elif [[ "$OS" == "debian" ]] || [[ "$OS" == "ubuntu" ]]; then
   sudo apt-get update
   sudo apt-get install -y unzip wget curl gzip tar ruby git cargo npm
   sudo apt-get install -y python3 python3-pip node
+  curl -LO https://github.com/neovim/neovim/releases/download/v0.9.1/nvim-linux64.deb # Added this line to download neovim deb package
+  sudo apt install ./nvim-linux64.deb # Added this line to install neovim deb package
 elif [[ "$OS" == "manjaro" ]]; then
   sudo pacman -Syu --noconfirm
   sudo pacman -S --noconfirm unzip wget curl gzip tar ruby git cargo npm
   sudo pacman -S --noconfirm python python-pip
-  sudo pacman -S --noconfirm go nodejs 
+  sudo pacman -S --noconfirm go nodejs neovim
 fi
 
 # Add Go to PATH
