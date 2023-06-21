@@ -21,7 +21,7 @@ elif [[ "$OS" == "debian" ]] || [[ "$OS" == "ubuntu" ]]; then
   sudo add-apt-repository ppa:neovim-ppa/unstable
   sudo apt-get update
   sudo apt-get install -y unzip wget curl gzip tar ruby git cargo npm xclip fzf
-  sudo apt-get install -y python3 python3-venv python3-pip node neovim
+  sudo apt-get install -y python3 python3-venv python3-pip nodejs neovim
 elif [[ "$OS" == "manjaro" ]]; then
   sudo pacman -Syu --noconfirm
   sudo pacman -S --noconfirm unzip wget curl gzip tar ruby git cargo npm
