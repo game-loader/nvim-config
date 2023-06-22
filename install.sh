@@ -37,8 +37,8 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 if [[ "$OS" == "macos" ]]; then
   # Mac users should use Homebrew to install Go instead of this script
   exit 0
-elif [[ "$OS" == "debian" ]] || [[ "$OS" == "ubuntu" ]] || [[ "$OS" == "manjaro" ]]; then
-  GO_LATEST=$(curl -sL https://golang.org/VERSION?m=text | sed 's/go//')
+elif [[ "$OS" == "debian" ]] || [[ "$OS" == "ubuntu" ]] ; then
+  GO_LATEST=$(curl -sL "https://golang.org/VERSION?m=text" | sed 's/go//')
   curl  https://mirrors.aliyun.com/golang/go$GO_LATEST.linux-amd64.tar.gz | sudo tar -C /usr/local -xz
   echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.bashrc
 fi
