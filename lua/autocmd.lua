@@ -34,6 +34,9 @@ local autoCommands = {
 	set_colorscheme = {
 		{ "VimEnter", "*", "lua set_colorscheme()" },
 	},
+	auto_change_directory = {
+		{ "BufEnter", "*", "lcd %:p:h" },
+	},
 }
 
 M.nvim_create_augroups(autoCommands)
