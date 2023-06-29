@@ -17,7 +17,7 @@ end
 
 function set_colorscheme()
 	local colorschemes = vim.fn.getcompletion("", "color")
-	local desired_colorscheme = "tokyonight-day"
+	local desired_colorscheme = "everforest"
 
 	if vim.tbl_contains(colorschemes, desired_colorscheme) then
 		vim.cmd("colorscheme " .. desired_colorscheme)

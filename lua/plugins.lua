@@ -6,12 +6,13 @@ return require("packer").startup(function()
 	use("rafcamlet/nvim-luapad")
 	------------------ themes --------------------------
 
-	use({
-		"navarasu/onedark.nvim",
-	})
+	-- use({
+	-- 	"navarasu/onedark.nvim",
+	-- })
 
 	use("folke/tokyonight.nvim")
 
+	use("sainnhe/everforest")
 	-----------------------------------------------------------------------------------------
 
 	-- a good terminal
@@ -156,7 +157,7 @@ return require("packer").startup(function()
 
 	-- cmake support
 	-- cmake 支持
-	use("Civitasv/cmake-tools.nvim")
+	-- use("Civitasv/cmake-tools.nvim")
 
 	-------------------   lsp   --------------------------
 	-- mason for lsp dap linter and others
