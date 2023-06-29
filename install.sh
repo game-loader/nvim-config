@@ -16,16 +16,20 @@ fi
 
 # Install packages
 if [[ "$OS" == "macos" ]]; then
-  brew install unzip wget curl gzip tar ruby go node python git cargo npm fzf
+  brew install unzip wget curl gzip tar ruby go node python git cargo npm fzf lazygit
 elif [[ "$OS" == "debian" ]] || [[ "$OS" == "ubuntu" ]]; then
   sudo add-apt-repository ppa:neovim-ppa/unstable
   sudo apt-get update
   sudo apt-get install -y unzip wget curl gzip tar ruby git cargo npm xclip fzf
   sudo apt-get install -y python3 python3-venv python3-pip nodejs neovim
+  LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+  curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+  tar xf lazygit.tar.gz lazygit
+  sudo install lazygit /usr/local/bin
 elif [[ "$OS" == "manjaro" ]]; then
   sudo pacman -Syu --noconfirm
   sudo pacman -S --noconfirm unzip wget curl gzip tar ruby git cargo npm
-  sudo pacman -S --noconfirm python python-pip fzf
+  sudo pacman -S --noconfirm python python-pip fzf lazygit
   sudo pacman -S --noconfirm go nodejs neovim
 fi
 

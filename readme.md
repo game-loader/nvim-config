@@ -15,7 +15,7 @@
 | hrsh7th/cmp-path                | 补全路径                                                            |
 | hrsh7th/cmp-buffer              | 缓冲区内重复单词补全                                                |
 | hrsh7th/cmp-nvim-lsp            | 补全与lsp的集成                                                     |
-| kyazdani42/nvim-tree.lua        | 文件查看器,不用多说                                                 |
+| kyazdani42/neo-tree.lua         | 文件查看器,不用多说,neo-tree的兼容性更好                            |
 | numToStr/Comment.nvim           | 强大的注释插件                                                      |
 | windwp/nvim-autopairs           | 括号自动补全                                                        |
 | ahmedkhalf/project.nvim         | 出色的项目管理工具,可与telescope集成                                |
@@ -44,7 +44,7 @@
 | \<leader>s     | 保存当前文件                              |
 | \<leader>S     | 保存所有文件                              |
 | \<leader><tab> | 切换回上一个buffer,用于两buffer间来回切换 |
-| \<leader>j     | 快速进行行跳转                                          |
+| \<leader>j     | 快速进行行跳转                            |
 | ,              | 运行当前文件代码,需要自行配置各种语言     |
 | Ctrl-\\        | 打开终端                                  |
 
