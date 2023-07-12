@@ -72,6 +72,12 @@ M.load_default_options = function()
 	for k, v in pairs(let_options) do
 		vim.g[k] = v
 	end
+
+	local colorschemes = vim.fn.getcompletion("", "color")
+	local desired_colorscheme = "material"
+	if vim.tbl_contains(colorschemes, desired_colorscheme) then
+		vim.g.material_style = "lighter"
+	end
 end
 
 return M

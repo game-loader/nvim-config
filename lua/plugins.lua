@@ -13,6 +13,8 @@ return require("packer").startup(function()
 	use("folke/tokyonight.nvim")
 
 	use("sainnhe/everforest")
+
+	use("marko-cerovac/material.nvim")
 	-----------------------------------------------------------------------------------------
 
 	-- a good terminal
@@ -40,7 +42,7 @@ return require("packer").startup(function()
 
 	-- orgmode support
 	-- orgmode 支持
-	use({ "nvim-orgmode/orgmode" })
+	-- use({ "nvim-orgmode/orgmode" })
 
 	-- nvim-tree for file manage
 	-- use({
@@ -60,16 +62,10 @@ return require("packer").startup(function()
 
 	-- vim dashboard
 	-- vim 开始界面
-	-- use({
-	-- 	"glepnir/dashboard-nvim",
-	-- 	event = "VimEnter",
-	-- 	-- config = function()
-	-- 	-- 	require("dashboard").setup({
-	-- 	-- 		-- config
-	-- 	-- 	})
-	-- 	-- end,
-	-- 	requires = { "nvim-tree/nvim-web-devicons" },
-	-- })
+	use({
+		"glepnir/dashboard-nvim",
+		requires = { "nvim-tree/nvim-web-devicons" },
+	})
 
 	-- smooth neovim scroll
 	-- 顺滑的neovim滚动
@@ -78,9 +74,6 @@ return require("packer").startup(function()
 	-- bufferline on the top
 	-- 顶部状态栏
 	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
-
-	-- 更方便的切换buffer
-	-- use({ "matbme/JABS.nvim" })
 
 	-- treesitter
 	use({
@@ -167,14 +160,20 @@ return require("packer").startup(function()
 		"neovim/nvim-lspconfig",
 	})
 
-	-- coc-nvim complete
-	-- use({ "neoclide/coc.nvim", branch = "release" })
 	-- null-ls for formatter and others
 	-- null-ls 用于格式化和其他
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 	})
 
+	-- flutter support
+	use({
+		"akinsho/flutter-tools.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+		},
+	})
 	-- -- 补全引擎
 	use("hrsh7th/nvim-cmp")
 	-- Snippet 引擎

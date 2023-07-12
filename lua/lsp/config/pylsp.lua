@@ -5,7 +5,11 @@ return {
 				pylsp = {
 					plugins = {
 						pycodestyle = {
-							ignore = { "E501" },
+							ignore = { "E501", "E265" },
+						},
+						jedi_completion = {
+							enabled = true,
+							fuzzy = true,
 						},
 					},
 				},

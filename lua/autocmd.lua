@@ -17,10 +17,11 @@ end
 
 function set_colorscheme()
 	local colorschemes = vim.fn.getcompletion("", "color")
-	local desired_colorscheme = "everforest"
+	local desired_colorscheme = "material"
 
 	if vim.tbl_contains(colorschemes, desired_colorscheme) then
 		vim.cmd("colorscheme " .. desired_colorscheme)
+		vim.g.material_style = "lighter"
 	else
 		vim.cmd("colorscheme default")
 	end

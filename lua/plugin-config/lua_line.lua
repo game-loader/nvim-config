@@ -33,6 +33,7 @@ require("lualine").setup({
 			tabline = 1000,
 			winbar = 1000,
 		},
+		theme = "material-nvim",
 	},
 	sections = {
 		lualine_a = { "mode" },
