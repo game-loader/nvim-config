@@ -197,6 +197,7 @@ map("n", "<C-o>", ":lua require'dap'.step_over()<CR>", opt)
 
 -- set keymap based on file type
 vim.cmd("autocmd FileType * lua SetKeybinds()")
+
 function SetKeybinds()
 	local fileTy = vim.api.nvim_buf_get_option(0, "filetype")
 	local opts = { prefix = "<localleader>", buffer = 0 }
@@ -211,6 +212,13 @@ function SetKeybinds()
 		wk.register({
 			["r"] = { ":MagmaEvaluateOperator<CR>", "Jupyter evaluate" },
 			["c"] = { ":MagmaEvaluateCell<CR>", "Jupyter evaluate cell" },
+		}, opts)
+	elseif fileTy == "dart" then
+		wk.register({
+			["r"] = { ":FlutterRun<CR>", "FlutterRun" },
+			["q"] = { ":FlutterQuit<CR>", "FlutterQuit" },
+			["c"] = { ":FlutterCopyProfilerUrl<CR>", "FlutterCopyProfilerUrl" },
+			["w"] = { ":FlutterDevTools<CR>", "FlutterDevTools" },
 		}, opts)
 		-- elseif fileTy == "sh" then
 		-- 	wk.register({
