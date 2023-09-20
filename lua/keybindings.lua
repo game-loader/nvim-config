@@ -100,6 +100,25 @@ wk.register({
 	},
 })
 
+-- 定义开关quickfix窗口的函数
+
+local function toggle_quickfix()
+	-- 获取所有窗口的信息
+	local wininfo = vim.fn.getwininfo()
+	-- 遍历所有窗口
+	for _, win in pairs(wininfo) do
+		-- 如果这个窗口是 quickfix 窗口
+		if win.quickfix == 1 then
+			-- 关闭 quickfix 窗口
+			vim.cmd("cclose")
+			-- 返回，不再继续查找
+			return
+		end
+	end
+	-- 如果没有找到 quickfix 窗口，就打开一个
+	vim.cmd("copen")
+end
+
 -- Bufferline and buffer related
 wk.register({
 	["<Leader>b"] = {
@@ -110,7 +129,12 @@ wk.register({
 		n = { ":ls<CR>", "Buffer numbers" },
 		c = { ":noh<CR>", "Cancel highlight" },
 		C = { ":call setqflist([], 'r')<CR>", "Clear quickfix" },
-		q = { ":copen<CR>", "Open quickfix" },
+		q = {
+			function()
+				toggle_quickfix()
+			end,
+			"Toggle quickfix",
+		},
 		s = { ":Telescope current_buffer_fuzzy_find<CR>", "Searching in buffer" },
 	},
 })

@@ -27,6 +27,12 @@ function set_colorscheme()
 	end
 end
 
+function auto_chdir()
+	local filename = vim.fn.expand("%:p")
+	local directory = vim.fn.fnamemodify(filename, ":h")
+	vim.cmd("cd " .. directory)
+end
+
 local autoCommands = {
 	-- other autocommands
 	open_folds = {
@@ -36,7 +42,7 @@ local autoCommands = {
 		{ "VimEnter", "*", "lua set_colorscheme()" },
 	},
 	auto_change_directory = {
-		{ "BufEnter", "*", "lcd %:p:h" },
+		{ "BufEnter", "*", "lua auto_chdir()" },
 	},
 }
 

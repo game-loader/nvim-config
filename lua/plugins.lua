@@ -60,6 +60,9 @@ return require("packer").startup(function()
 		},
 	})
 
+	----------------latex------------------
+	use("lervag/vimtex")
+
 	-- vim dashboard
 	-- vim 开始界面
 	use({
@@ -186,6 +189,7 @@ return require("packer").startup(function()
 	use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
 	use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
 	use("hrsh7th/cmp-path") -- { name = 'path' }
+	use("hrsh7th/cmp-omni") -- { name = 'omni' }
 	use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
 	use("hrsh7th/cmp-nvim-lsp-signature-help") -- { name = 'nvim_lsp_signature_help' }
 	-- 常见编程语言代码段

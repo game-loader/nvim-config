@@ -21,6 +21,7 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "orgmode" },
 		{ name = "nvim_lsp" },
+		{ name = "omni" },
 		-- For vsnip users.
 		-- { name = "vsnip" },
 		-- For luasnip users.

@@ -15,12 +15,12 @@ require("null-ls").setup({
 		require("null-ls").builtins.formatting.stylua,
 		require("null-ls").builtins.formatting.styler,
 		require("null-ls").builtins.formatting.clang_format.with({
-			disabled_filetypes = { "cs" },
+			disabled_filetypes = { "cs", "js" },
 		}),
 		require("null-ls").builtins.formatting.csharpier,
 		require("null-ls").builtins.formatting.gofmt,
 		require("null-ls").builtins.formatting.black,
-		require("null-ls").builtins.formatting.eslint_d,
+		require("null-ls").builtins.formatting.prettier,
 		require("null-ls").builtins.formatting.jq,
 	},
 	-- you can reuse a shared lspconfig on_attach callback here
