@@ -16,7 +16,7 @@ fi
 
 # Install packages
 if [[ "$OS" == "macos" ]]; then
-  brew install unzip wget curl gzip tar ruby go node python git cargo npm fzf lazygit
+  brew install unzip wget curl gzip ruby go node python git rust npm fzf lazygit
 elif [[ "$OS" == "debian" ]] || [[ "$OS" == "ubuntu" ]]; then
   sudo add-apt-repository ppa:neovim-ppa/unstable
   sudo apt-get update
