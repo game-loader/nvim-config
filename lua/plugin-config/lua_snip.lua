@@ -57,4 +57,24 @@ ls.add_snippets("markdown", {
 	}),
 })
 
-require("luasnip.loaders.from_lua").lazy_load({ include = { "all", "markdown" } })
+ls.add_snippets("tex", {
+	s("usepackage", {
+		t("\\usepackage{"),
+		i(1),
+		t("}"),
+	}),
+	s("begin", {
+		t("\\begin{"),
+		i(1, "enumerate"),
+		t("}"),
+		t({ "", "" }),
+		i(2, "(content)"),
+		t({ "", "\\end{" }),
+		f(function(args)
+			return args[1][1]
+		end, { 1 }),
+		t("}"),
+	}),
+})
+
+require("luasnip.loaders.from_lua").lazy_load({ include = { "all", "markdown", "tex" } })

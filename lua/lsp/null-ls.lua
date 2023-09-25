@@ -18,6 +18,7 @@ require("null-ls").setup({
 			disabled_filetypes = { "cs", "js" },
 		}),
 		require("null-ls").builtins.formatting.csharpier,
+		require("null-ls").builtins.formatting.latexindent,
 		require("null-ls").builtins.formatting.gofmt,
 		require("null-ls").builtins.formatting.black,
 		require("null-ls").builtins.formatting.prettier,

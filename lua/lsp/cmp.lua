@@ -1,5 +1,6 @@
 local lspkind = require("lspkind")
 local cmp = require("cmp")
+
 cmp.setup({
 	-- 指定 snippet 引擎
 	snippet = {
@@ -17,6 +18,7 @@ cmp.setup({
 			-- require'snippy'.expand_snippet(args.body)
 		end,
 	},
+
 	-- 来源
 	sources = cmp.config.sources({
 		{ name = "orgmode" },
@@ -77,8 +79,7 @@ require("lsp_signature").setup(signature_config)
 
 -- 补全时自动添加括号
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 -- use friendly snippet
 require("luasnip.loaders.from_vscode").lazy_load()

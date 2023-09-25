@@ -12,6 +12,7 @@ vim.g.vimtex_view_method = "skim"
 
 vim.g.vimtex_complete_close_braces = 1
 vim.g.vimtex_syntax_enabled = 1
+vim.g.vimtex_indent_lists = {}
 vim.g.vimtex_compiler_latexmk_engines = {
 	["_"] = "-xelatex",
 }

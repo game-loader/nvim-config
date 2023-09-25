@@ -59,6 +59,7 @@ wk.register({
 		n = { ":AdvancedNewFile<CR>", "New file" },
 		s = { ":Telescope live_grep<CR>", "Search in project" },
 		f = { ":Telescope find_files<CR>", "Search file" },
+		c = { ":source $MYVIMRC<CR>", "Reload config file" },
 	},
 })
 
